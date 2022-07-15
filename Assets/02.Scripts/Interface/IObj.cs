@@ -8,4 +8,10 @@ public interface IObj
 	{
 		get;
 	}
+
+	/// <summary>
+	/// 충돌시 효과 발생
+	/// </summary>
+	void CollisionInvoke(IObj obj);
+
 }
