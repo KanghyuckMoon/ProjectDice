@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	[SerializeField]
+	private GameObject _bullet = null;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	private void Start()
+	{
+		GameObject bullet = Instantiate(_bullet, transform.position, transform.rotation, null);
+
+	}
 }
