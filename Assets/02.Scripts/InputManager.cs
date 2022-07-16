@@ -1,27 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class InputManager : MonoBehaviour
 {
 	[SerializeField]
 	private List<Dice> _dices = new List<Dice>();
+	private float _delay = 0.35f;
 
 	private void Update()
 	{
-		if(Input.GetKeyDown(KeyCode.W))
+		if(_delay > 0)
+		{
+			_delay -= Time.deltaTime;
+			return;
+		}
+
+		if(Input.GetKey(KeyCode.W))
 		{
 			Move(0, 1);
 		}
-		if (Input.GetKeyDown(KeyCode.S))
+		if (Input.GetKey(KeyCode.S))
 		{
 			Move(0, -1);
 		}
-		if (Input.GetKeyDown(KeyCode.D))
+		if (Input.GetKey(KeyCode.D))
 		{
 			Move(1, 0);
 		}
-		if (Input.GetKeyDown(KeyCode.A))
+		if (Input.GetKey(KeyCode.A))
 		{
 			Move(-1, 0);
 		}
@@ -31,11 +39,13 @@ public class InputManager : MonoBehaviour
 	{
 		foreach(var dice in _dices)
 		{
-			int laytMask = 1 << LayerMask.NameToLayer("Wall");
-			if(!Physics2D.Raycast(dice.transform.position, new Vector3(x, y, 0),0.5f, laytMask))
+			if(dice.CanMove(x, y))
 			{
-
+				Vector2 movePos = (Vector2)dice.transform.position + new Vector2(x, y);
+				dice.DOKill();
+				dice.transform.DOMove(movePos, 0.3f);
 			}
 		}
+		_delay = 0.35f;
 	}
 }
