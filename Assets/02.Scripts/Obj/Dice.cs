@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dice : MonoBehaviour
+public class Dice : MonoBehaviour, IObj
 {
 	public int DiceScale
 	{
@@ -21,6 +21,14 @@ public class Dice : MonoBehaviour
 		set
 		{
 			_pos = value;
+		}
+	}
+
+	public string Address
+	{ 
+		get
+		{
+			return "Dice";
 		}
 	}
 
@@ -81,4 +89,13 @@ public class Dice : MonoBehaviour
 		Debug.DrawRay(movePos, new Vector3(0, 0.5f, 0), Color.red);
 	}
 
+	public void CollisionInvoke(IObj obj)
+	{
+		obj.DeleteObject();
+	}
+
+	public void DeleteObject()
+	{
+		//¾øÀ½
+	}
 }
