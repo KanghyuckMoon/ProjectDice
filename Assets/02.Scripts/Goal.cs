@@ -14,7 +14,7 @@ public class Goal : MonoBehaviour, IObj
 
 	public void CollisionInvoke(IObj obj)
 	{
-		Debug.Log("Goal");
+		StageManager.Instance.NextStage();
 	}
 
 	public void DeleteObject()
