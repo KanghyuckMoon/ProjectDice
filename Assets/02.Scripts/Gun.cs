@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-	[SerializeField]
 	private GameObject _bullet = null;
 
 	private void Start()
 	{
+		_bullet = AddressablesManager.Instance.GetResource<GameObject>("Bullet");
 		GameObject bullet = Instantiate(_bullet, transform.position, transform.rotation, null);
 
 	}

@@ -7,6 +7,14 @@ public class Bullet : MonoBehaviour, IObj
 	[SerializeField]
 	private float _speed = 1f;
 
+	public string Address
+	{
+		get
+		{
+			return "Bullet";
+		}
+	}
+
 	private void Update()
 	{
 		Move();
@@ -35,5 +43,15 @@ public class Bullet : MonoBehaviour, IObj
 	public void CollisionInvoke(IObj obj)
 	{
 		obj.CollisionInvoke(this);
+	}
+
+	/// <summary>
+	/// ÃÑ¾Ë »èÁ¦
+	/// </summary>
+	/// <param name="obj"></param>
+	public void DeleteObject()
+	{
+		PoolManager.Instance.RegisterObject(Address, gameObject);
+		gameObject.SetActive(false);
 	}
 }

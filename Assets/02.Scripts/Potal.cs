@@ -20,6 +20,14 @@ public class Potal : MonoBehaviour, IObj
 		}
 	}
 
+	public string Address
+	{
+		get
+		{
+			return "Potal";
+		}
+	}
+
 	[SerializeField]
 	private Potal _matchPotal = null;
 	[SerializeField]
@@ -33,9 +41,9 @@ public class Potal : MonoBehaviour, IObj
 	/// </summary>
 	public void MoveObject(IObj obj)
 	{
-		obj.gameObject.SetActive(false);
+		obj.DeleteObject();
 		_objs.Enqueue(obj);
-		if(_coroutine == null)
+		if (_coroutine == null)
 		{
 			_coroutine = StartCoroutine(CopyObject());
 		}
@@ -46,14 +54,19 @@ public class Potal : MonoBehaviour, IObj
 		IObj obj = _objs.Dequeue();
 		for (int i = 0; i < Dice.DiceScale; ++i)
 		{
-			GameObject InstanceObj = Instantiate(obj.gameObject, transform.position, transform.rotation, null);
+			GameObject instanceObj = PoolManager.Instance.GetObject(obj.Address);
+			if(instanceObj == null)
+			{
+				instanceObj = Instantiate(obj.gameObject, transform.position, transform.rotation, null);
+			}
 
 			Vector2 movePosition = transform.position;
 			movePosition += (Vector2)transform.right * 0.5f;
 
-			InstanceObj.gameObject.transform.position = movePosition;
-			InstanceObj.gameObject.transform.rotation = transform.rotation;
-			InstanceObj.gameObject.SetActive(true);
+			instanceObj.transform.rotation = transform.rotation;
+			instanceObj.transform.position = movePosition;
+			instanceObj.transform.rotation = transform.rotation;
+			instanceObj.SetActive(true);
 
 			yield return new WaitForSeconds(0.2f);
 		}
@@ -75,5 +88,16 @@ public class Potal : MonoBehaviour, IObj
 	public void CollisionInvoke(IObj obj)
 	{
 		MatchPotal.MoveObject(obj);
+	}
+
+
+	/// <summary>
+	/// Æ÷Å» »èÁ¦
+	/// </summary>
+	/// <param name="obj"></param>
+	public void DeleteObject()
+	{
+		PoolManager.Instance.RegisterObject(Address, gameObject);
+		gameObject.SetActive(false);
 	}
 }
