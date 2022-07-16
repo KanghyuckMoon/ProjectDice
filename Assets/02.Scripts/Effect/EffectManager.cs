@@ -66,6 +66,10 @@ public class EffectManager : Singleton<EffectManager>
         for(int i = 0; i < count; ++i)
         {
             Transform parent = _effectParents[(EffectType)i];
+            if(parent == null)
+			{
+                return;
+			}
             int childCount = parent.childCount;
             for(int j = 0; j < childCount; ++j)
             {

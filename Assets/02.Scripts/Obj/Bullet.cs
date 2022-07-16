@@ -42,7 +42,6 @@ public class Bullet : MonoBehaviour, IObj
 	/// <exception cref="System.NotImplementedException"></exception>
 	public void CollisionInvoke(IObj obj)
 	{
-		EffectManager.Instance.SetEffect(EffectType.BulletEffect, transform.position);
 		obj.CollisionInvoke(this);
 	}
 
@@ -52,6 +51,7 @@ public class Bullet : MonoBehaviour, IObj
 	/// <param name="obj"></param>
 	public void DeleteObject()
 	{
+		EffectManager.Instance.SetEffect(EffectType.BulletEffect, transform.position);
 		PoolManager.Instance.RegisterObject(Address, gameObject);
 		gameObject.SetActive(false);
 	}

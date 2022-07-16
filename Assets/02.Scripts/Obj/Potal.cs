@@ -102,7 +102,7 @@ public class Potal : MonoBehaviour, IObj
 			}
 
 			Vector2 movePosition = transform.position;
-			movePosition += (Vector2)transform.right * 0.5f;
+			movePosition += (Vector2)transform.right * 0.1f;
 
 			instanceObj.transform.rotation = transform.rotation;
 			instanceObj.transform.position = movePosition;
