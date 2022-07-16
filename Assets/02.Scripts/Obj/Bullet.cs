@@ -42,6 +42,7 @@ public class Bullet : MonoBehaviour, IObj
 	/// <exception cref="System.NotImplementedException"></exception>
 	public void CollisionInvoke(IObj obj)
 	{
+		EffectManager.Instance.SetEffect(EffectType.BulletEffect, transform.position);
 		obj.CollisionInvoke(this);
 	}
 

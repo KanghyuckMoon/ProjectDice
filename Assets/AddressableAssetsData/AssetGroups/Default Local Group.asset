@@ -21,6 +21,10 @@ MonoBehaviour:
     m_Address: Bullet
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 399878d8423d24b44a8ad68bbd4e81f3
+    m_Address: BulletEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 657014d5bd03f0048b070ff26ebbfb1d, type: 2}
   m_SchemaSet:
