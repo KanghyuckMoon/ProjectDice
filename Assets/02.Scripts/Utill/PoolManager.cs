@@ -13,13 +13,13 @@ public class PoolManager : Singleton<PoolManager>
 
 	private void Start()
 	{
-		SceneManager.sceneLoaded += () => ClearQueue();
+		SceneManager.sceneLoaded += ClearQueue;
 	}
 
 	/// <summary>
 	/// 큐 제거
 	/// </summary>
-	private void ClearQueue()
+	private void ClearQueue(Scene scene, LoadSceneMode mode)
 	{
 		queueDictionary.Clear();
 	}
@@ -68,6 +68,54 @@ public class PoolManager : Singleton<PoolManager>
 		if (!queueDictionary.TryGetValue(typeof(T).Name, out var something))
 		{
 			queueDictionary.Add(typeof(T).Name, queue);
+		}
+	}
+
+
+	/// <summary>
+	/// 큐에서 오브젝트 가져오기
+	/// </summary>
+	public GameObject GetObject(string name)
+	{
+		if (queueDictionary.TryGetValue(name, out var something))
+		{
+			var queue = something as Queue<GameObject>;
+			if (queue.Count > 0)
+			{
+				return queue.Dequeue();
+			}
+		}
+		return null;
+	}
+
+	/// <summary>
+	/// 큐에 오브젝트 등록하기
+	/// </summary>
+	public void RegisterObject(string name, GameObject obj)
+	{
+		if (queueDictionary.TryGetValue(name, out var something))
+		{
+			var queue = something as Queue<GameObject>;
+			queue.Enqueue(obj);
+		}
+		else
+		{
+			AddQueue(name);
+			var queue = queueDictionary[name] as Queue<GameObject>;
+			queue.Enqueue(obj);
+		}
+	}
+
+	/// <summary>
+	/// 큐 등록
+	/// </summary>
+	/// <typeparam name=""></typeparam>
+	private void AddQueue(string name)
+	{
+		Queue<GameObject> queue = new Queue<GameObject>();
+		if (!queueDictionary.TryGetValue(name, out var something))
+		{
+			queueDictionary.Add(name, queue);
 		}
 	}
 

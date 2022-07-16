@@ -25,17 +25,46 @@ public class Potal : MonoBehaviour, IObj
 	[SerializeField]
 	private Dice _dice = null;
 
+	private Queue<IObj> _objs = new Queue<IObj>();
+	private Coroutine _coroutine = null;
+
 	/// <summary>
 	/// 물건 순간이동
 	/// </summary>
 	public void MoveObject(IObj obj)
 	{
-		Vector2 movePosition = transform.position;
-		movePosition += (Vector2)transform.right * 0.5f;
+		obj.gameObject.SetActive(false);
+		_objs.Enqueue(obj);
+		if(_coroutine == null)
+		{
+			_coroutine = StartCoroutine(CopyObject());
+		}
+	}
 
-		obj.gameObject.transform.position = movePosition;
-		obj.gameObject.transform.rotation = transform.rotation;
+	private IEnumerator CopyObject()
+	{
+		IObj obj = _objs.Dequeue();
+		for (int i = 0; i < Dice.DiceScale; ++i)
+		{
+			GameObject InstanceObj = Instantiate(obj.gameObject, transform.position, transform.rotation, null);
 
+			Vector2 movePosition = transform.position;
+			movePosition += (Vector2)transform.right * 0.5f;
+
+			InstanceObj.gameObject.transform.position = movePosition;
+			InstanceObj.gameObject.transform.rotation = transform.rotation;
+			InstanceObj.gameObject.SetActive(true);
+
+			yield return new WaitForSeconds(0.2f);
+		}
+		if(_objs.Count > 0)
+		{
+			StartCoroutine(CopyObject());
+		}
+		else
+		{
+			_coroutine = null;
+		}
 	}
 
 	/// <summary>
