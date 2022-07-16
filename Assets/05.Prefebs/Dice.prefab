@@ -100,6 +100,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scale: 1
+  _sprites:
+  - {fileID: 1427236374, guid: 13a1e28397b4ea8478bf980df46252a5, type: 3}
+  - {fileID: -1025886026, guid: 13a1e28397b4ea8478bf980df46252a5, type: 3}
+  - {fileID: -2022835726, guid: 13a1e28397b4ea8478bf980df46252a5, type: 3}
+  - {fileID: 301614013, guid: 13a1e28397b4ea8478bf980df46252a5, type: 3}
+  - {fileID: 1101585942, guid: 13a1e28397b4ea8478bf980df46252a5, type: 3}
+  - {fileID: -2052769666, guid: 13a1e28397b4ea8478bf980df46252a5, type: 3}
+  - {fileID: -880018337, guid: 13a1e28397b4ea8478bf980df46252a5, type: 3}
 --- !u!61 &2629691673897368036
 BoxCollider2D:
   m_ObjectHideFlags: 0

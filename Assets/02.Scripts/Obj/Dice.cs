@@ -26,7 +26,24 @@ public class Dice : MonoBehaviour
 
 	[SerializeField]
 	private int _scale = 1;
+	[SerializeField]
+	private List<Sprite> _sprites;
+
 	private Vector2 _pos = Vector2.zero;
+
+	private void Start()
+	{
+		SetScaleSprite();
+	}
+
+	/// <summary>
+	/// 눈금 수 이미지 설정
+	/// </summary>
+	private void SetScaleSprite()
+	{
+		SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+		spriteRenderer.sprite = _sprites[_scale];
+	}
 
 	/// <summary>
 	/// 주사위가 움직일 수 있는지

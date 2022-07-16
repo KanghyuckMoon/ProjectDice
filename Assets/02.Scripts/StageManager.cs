@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class StageManager : Singleton<StageManager>
 {
-	private StageType _stageType = StageType.None;
+	private StageType _stageType = StageType.Stage1;
 
 	/// <summary>
 	/// 다음 스테이지로 이동
