@@ -11,6 +11,11 @@ public class InputManager : MonoBehaviour
 
 	private void Update()
 	{
+		if(PlayManager.Instance.IsStart)
+		{
+			return;
+		}
+
 		if(_delay > 0)
 		{
 			_delay -= Time.deltaTime;
