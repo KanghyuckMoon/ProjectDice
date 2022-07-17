@@ -12,8 +12,18 @@ public class Goal : MonoBehaviour, IObj
 		}
 	}
 
+	private bool _isStageClear = false;
+
 	public void CollisionInvoke(IObj obj)
 	{
+		if(_isStageClear)
+		{
+			return;
+		}
+
+		_isStageClear = true;
+
+		obj.DeleteObject();
 		StageManager.Instance.NextStage();
 	}
 

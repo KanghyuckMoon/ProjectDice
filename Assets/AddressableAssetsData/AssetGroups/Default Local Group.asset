@@ -25,6 +25,14 @@ MonoBehaviour:
     m_Address: BulletEffect
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 5a14789566428394da0aedf1d0e2c57c
+    m_Address: ShotSound
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4dbab109de54d2b4892661d6cbdb36fe
+    m_Address: MainMixer
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 657014d5bd03f0048b070ff26ebbfb1d, type: 2}
   m_SchemaSet:
