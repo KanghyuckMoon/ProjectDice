@@ -5,11 +5,26 @@ using DG.Tweening;
 
 public class InputManager : MonoBehaviour
 {
+	public bool IsRollMode
+	{
+		get
+		{
+			return _isRollMode;
+		}
+	}
+
 	[SerializeField]
 	private List<Dice> _dices = new List<Dice>();
 	private float _delay = 0.35f;
 
 	private bool _isRollMode = false;
+
+	private List<IObserver> _observers = new List<IObserver>();
+
+	public void AddObserver(IObserver observer)
+	{
+		_observers.Add(observer);
+	}
 
 	private void Update()
 	{
@@ -18,7 +33,17 @@ public class InputManager : MonoBehaviour
 			return;
 		}
 
-		if(_delay > 0)
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			_isRollMode = !_isRollMode;
+			SoundManager.Instance.PlayEFF(AudioEFFType.SwitchSound);
+			foreach (var observer in _observers)
+			{
+				observer.Notice();
+			}
+		}
+
+		if (_delay > 0)
 		{
 			_delay -= Time.deltaTime;
 			return;
@@ -55,11 +80,6 @@ public class InputManager : MonoBehaviour
 			}
 		}
 
-		if(Input.GetKeyDown(KeyCode.Space))
-		{
-			_isRollMode = !_isRollMode;
-			SoundManager.Instance.PlayEFF(AudioEFFType.SwitchSound);
-		}
 	}
 
 
