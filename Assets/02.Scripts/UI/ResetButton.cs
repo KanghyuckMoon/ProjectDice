@@ -11,4 +11,12 @@ public class ResetButton : MonoBehaviour
 	{
 		PlayManager.Instance.ResetGame();
 	}
+
+	private void Update()
+	{
+		if(Input.GetKeyDown(KeyCode.R))
+		{
+			Invoke();
+		}
+	}
 }

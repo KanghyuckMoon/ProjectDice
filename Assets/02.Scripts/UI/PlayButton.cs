@@ -12,4 +12,13 @@ public class PlayButton : MonoBehaviour
 		PlayManager.Instance.OnPlay();
 		gameObject.SetActive(false);
 	}
+
+
+	private void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.Return))
+		{
+			Invoke();
+		}
+	}
 }
