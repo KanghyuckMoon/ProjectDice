@@ -26,6 +26,7 @@ public class Goal : MonoBehaviour, IObj
 		_isStageClear = true;
 
 		StageManager.Instance.NextStage();
+		SoundManager.Instance.PlayEFF(AudioEFFType.ClearSound);
 	}
 
 	public void DeleteObject()

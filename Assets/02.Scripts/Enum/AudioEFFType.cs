@@ -5,5 +5,6 @@ public enum AudioEFFType
 	GunSound,
 	MoveSound,
 	SwitchSound,
+	ClearSound,
 	Count,
 }
