@@ -49,6 +49,10 @@ MonoBehaviour:
     m_Address: MoveSound
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: bd60db1a06901774d810a5ec60854f34
+    m_Address: SwitchSound
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 657014d5bd03f0048b070ff26ebbfb1d, type: 2}
   m_SchemaSet:

@@ -4,5 +4,6 @@ public enum AudioEFFType
 	PotalSound,
 	GunSound,
 	MoveSound,
+	SwitchSound,
 	Count,
 }

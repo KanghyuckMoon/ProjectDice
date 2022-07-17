@@ -58,6 +58,7 @@ public class InputManager : MonoBehaviour
 		if(Input.GetKeyDown(KeyCode.Space))
 		{
 			_isRollMode = !_isRollMode;
+			SoundManager.Instance.PlayEFF(AudioEFFType.SwitchSound);
 		}
 	}
 
