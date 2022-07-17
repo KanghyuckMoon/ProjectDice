@@ -66,7 +66,7 @@ public class StageManager : Singleton<StageManager>
 	/// <returns></returns>
 	private IEnumerator SceneMove()
 	{
-		yield return new WaitForSeconds(3);
+		yield return new WaitForSeconds(2);
 
 		_stageType = (StageType)((int)_stageType + 1);
 		if (_stageType == StageType.Count || _stageType == StageType.None)
