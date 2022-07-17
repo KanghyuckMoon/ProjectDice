@@ -149,6 +149,34 @@ PrefabInstance:
       propertyPath: m_Offset.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6870192389446374480, guid: 1092bf5dbd0891a40a6b22bf7db1b157, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6870192389446374480, guid: 1092bf5dbd0891a40a6b22bf7db1b157, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6870192389446374480, guid: 1092bf5dbd0891a40a6b22bf7db1b157, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6870192389446374480, guid: 1092bf5dbd0891a40a6b22bf7db1b157, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6870192389446374480, guid: 1092bf5dbd0891a40a6b22bf7db1b157, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6870192389446374480, guid: 1092bf5dbd0891a40a6b22bf7db1b157, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 6870192389446374480, guid: 1092bf5dbd0891a40a6b22bf7db1b157, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.125
+      objectReference: {fileID: 0}
     - target: {fileID: 6870192389446374482, guid: 1092bf5dbd0891a40a6b22bf7db1b157, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -201,6 +229,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6870192389446374483, guid: 1092bf5dbd0891a40a6b22bf7db1b157, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -922413593, guid: 7bd3156caf7d87c418ac6e02307357c0, type: 3}
     - target: {fileID: 6870192389446374493, guid: 1092bf5dbd0891a40a6b22bf7db1b157, type: 3}
       propertyPath: m_Name
       value: Potal
