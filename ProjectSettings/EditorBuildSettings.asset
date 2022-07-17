@@ -39,10 +39,10 @@ EditorBuildSettings:
     path: Assets/00.Scenes/Stage/Stage8.unity
     guid: 26315c2270182d14696629d989683edd
   - enabled: 1
-    path: Assets/00.Scenes/Stage/Stage9.unity
+    path: Assets/00.Scenes/Stage/Stage10.unity
     guid: bbfb8186d058a9a49afe5580adc67a8f
   - enabled: 1
-    path: Assets/00.Scenes/Stage/Stage10.unity
+    path: Assets/00.Scenes/Stage/Stage9.unity
     guid: b86d8b0502aa9df49b37a82243981909
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: a321046a93fae9843867f43c1900fe6a, type: 2}
