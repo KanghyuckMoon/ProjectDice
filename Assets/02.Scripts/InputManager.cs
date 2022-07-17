@@ -78,6 +78,7 @@ public class InputManager : MonoBehaviour
 				dice.transform.DOMove(movePos, 0.3f);
 			}
 		}
+		SoundManager.Instance.PlayEFF(AudioEFFType.MoveSound);
 		_delay = 0.35f;
 	}
 
@@ -93,6 +94,7 @@ public class InputManager : MonoBehaviour
 			Vector3 rotateVector = dice.transform.eulerAngles + new Vector3(0,0, angle);
 			dice.transform.DORotate(rotateVector, 0.3f);
 		}
+		SoundManager.Instance.PlayEFF(AudioEFFType.MoveSound);
 		_delay = 0.35f;
 	}
 }
