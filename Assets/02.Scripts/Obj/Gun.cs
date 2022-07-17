@@ -10,6 +10,7 @@ public class Gun : MonoBehaviour, IObserver
 	public void Notice()
 	{
 		GameObject bullet = Instantiate(_bullet, transform.position, transform.rotation, null);
+		SoundManager.Instance.PlayEFF(AudioEFFType.GunSound);
 	}
 
 	private void Start()

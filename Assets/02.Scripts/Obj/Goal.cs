@@ -16,14 +16,15 @@ public class Goal : MonoBehaviour, IObj
 
 	public void CollisionInvoke(IObj obj)
 	{
-		if(_isStageClear)
+		obj.DeleteObject();
+
+		if (_isStageClear)
 		{
 			return;
 		}
 
 		_isStageClear = true;
 
-		obj.DeleteObject();
 		StageManager.Instance.NextStage();
 	}
 

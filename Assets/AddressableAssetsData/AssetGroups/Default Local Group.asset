@@ -33,6 +33,18 @@ MonoBehaviour:
     m_Address: MainMixer
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 08c98a7a1c720ef46a9b1e56581273f8
+    m_Address: MainBGM
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9250f7f7a64cb6543ac8fe24151f0c5e
+    m_Address: GunSound
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 96ec855a7d1c75848966d60602d3135a
+    m_Address: PotalSound
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 657014d5bd03f0048b070ff26ebbfb1d, type: 2}
   m_SchemaSet:
