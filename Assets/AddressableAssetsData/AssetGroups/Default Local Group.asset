@@ -57,6 +57,10 @@ MonoBehaviour:
     m_Address: ClearSound
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: c673b5e9847742244b80e63d3785f13b
+    m_Address: PotalEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 657014d5bd03f0048b070ff26ebbfb1d, type: 2}
   m_SchemaSet:

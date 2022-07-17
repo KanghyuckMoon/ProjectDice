@@ -109,6 +109,7 @@ public class Potal : MonoBehaviour, IObj
 			instanceObj.transform.rotation = transform.rotation;
 			instanceObj.SetActive(true);
 
+			EffectManager.Instance.SetEffect(EffectType.PotalEffect, transform.position);
 			SoundManager.Instance.PlayEFF(AudioEFFType.PotalSound);
 			yield return new WaitForSeconds(0.2f);
 		}
