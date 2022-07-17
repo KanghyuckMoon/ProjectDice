@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44c1f4e0a00c04846ac623ae414d0fb2, type: 3}
+  m_Name: TipTextSO
+  m_EditorClassIdentifier: 
+  tipTextList:
+  - None
+  - Click the Play button
+  - Go to WASD
+  - The bullets stretch as much as the dice ticks
+  - Change the top and bottom positions
+  - Change the left and right positions
+  - Press the space bar to switch to rotary mode
+  - Pay your bills well
+  - Think of various ways
+  - Think about the position of the dice
+  - Use this space
+  - None
