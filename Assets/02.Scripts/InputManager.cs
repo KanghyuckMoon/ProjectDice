@@ -33,7 +33,7 @@ public class InputManager : MonoBehaviour
 			return;
 		}
 
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetKeyDown(KeyCode.R))
 		{
 			_isRollMode = !_isRollMode;
 			SoundManager.Instance.PlayEFF(AudioEFFType.SwitchSound);

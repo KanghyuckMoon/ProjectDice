@@ -37,10 +37,6 @@ MonoBehaviour:
     m_Address: MainBGM
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 9250f7f7a64cb6543ac8fe24151f0c5e
-    m_Address: GunSound
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 96ec855a7d1c75848966d60602d3135a
     m_Address: PotalSound
     m_ReadOnly: 0

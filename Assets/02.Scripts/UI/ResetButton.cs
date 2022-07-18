@@ -14,7 +14,7 @@ public class ResetButton : MonoBehaviour
 
 	private void Update()
 	{
-		if(Input.GetKeyDown(KeyCode.R))
+		if(Input.GetKeyDown(KeyCode.Backspace))
 		{
 			Invoke();
 		}
